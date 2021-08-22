@@ -5,7 +5,7 @@ namespace splitbrain\RemarkableAPI;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Str;
 use splitbrain\PHPArchive\Zip;
 
 /**
@@ -62,7 +62,7 @@ class RemarkableAPI
      */
     public function register($code)
     {
-        $device = Uuid::uuid4()->toString();
+        $device = Str::uuid()->toString();
 
         $data = [
             'code' => $code,
@@ -182,7 +182,7 @@ class RemarkableAPI
     public function createFolder($name, $parentID = '')
     {
         $item = [
-            'ID' => Uuid::uuid4()->toString(),
+            'ID' => Str::uuid()->toString(),
             'Parent' => $parentID,
             'Type' => self::TYPE_COLLECTION,
             'Version' => 1,
@@ -228,7 +228,7 @@ class RemarkableAPI
     public function uploadPDF($pdfBody, $name, $parentID = '')
     {
         $item = [
-            'ID' => Uuid::uuid4()->toString(),
+            'ID' => Str::uuid()->toString(),
             'Parent' => $parentID,
             'VissibleName' => $name,
             'ModifiedClient' => (new \DateTime())->format('c'),

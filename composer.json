@@ -10,10 +10,10 @@
     }
   ],
   "require": {
-    "ramsey/uuid": "^3.7",
-    "guzzlehttp/guzzle": "^6.3",
+    "guzzlehttp/guzzle": "^7.0.1",
     "psr/log": "^1.0",
-    "splitbrain/php-archive": "^1.0"
+    "splitbrain/php-archive": "^1.0",
+    "illuminate/support": "^8.55"
   },
   "require-dev": {
     "splitbrain/php-cli": "^1.1"
